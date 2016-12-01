@@ -13,11 +13,11 @@ function callofduty(){
 module.exports.modulojogo = fifa;
 */
 
-/* --- aula 17 ---- */
+/* ----------------------------- aula 17 ----------------------------- */
 
 /* outra forma de chamar a função: */
 
-module.exports = {
+/*module.exports = {
 
    fifa: function(){
       console.log("Este é o jogo FIFA");
@@ -27,4 +27,11 @@ module.exports = {
        console.log("Este é o jogo COD");
    },
    jogoFavorito: "Corrida"
+} */
+
+/* ----------------------------- aula 18 ----------------------------- */
+
+module.exports = {
+
+   jogofavorito: ''
 }
