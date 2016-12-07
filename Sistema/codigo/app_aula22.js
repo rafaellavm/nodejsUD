@@ -1,25 +1,19 @@
 var http = require('http');
-var fs = require('fs');
 
-function mandar404(resposta){
 
-    resposta.writeHead(404, {"context-type": "text/plain"});
-    resposta.write("Falha ao tentar acessar o servidor!");
-    resposta.end();
-
-}
-
+//request: variável da requisição
 function onRequest(request,resposta){
+    console.log('O usuário tem uma solicitação... ' + request.url);
 
-    if(request.method == 'GET' && request.url == '/'){
-        resposta.writeHead(200, {"context-type" : "text/html"});
-        fs.createReadStream('./index.html').pipe(resposta);
-    }
-    else{
-       //caso der erro
-        mandar404(resposta);
-    }
+    //context-type cria uma área de conteúdo
+    //text/plain pra q ele coloque um texto no conteúdo
+    //200: sucesso
+    resposta.writeHead(200,{'context-type' : 'text/plain'});
+    resposta.write('Este texto será mostrado ao acessar o servidor');
+    resposta.end();
 }
 
 http.createServer(onRequest).listen(8888);
-console.log("Servidor está ativo...");
+console.log('O servidor está ativo...');
+
+
